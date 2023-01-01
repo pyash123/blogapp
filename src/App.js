@@ -10,6 +10,7 @@ import Write from "./Pages/write/Write";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import About from './Pages/about/About';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -40,6 +41,7 @@ function App() {
     <Route path = "/login" element = {<Login/>}/>
     <Route path = "/write" element = {<Write/>}/>
     <Route path="/settings"  element = {<Settings/>}/>
+    <Route path="/about"  element = {<About/>}/>
       
           
         

@@ -1,5 +1,5 @@
 import "./login.css"
-import { useState, useRef} from "react";
+import { useState, useRef ,useEffect} from "react";
 import { useNavigate} from "react-router-dom";
 import { getAuth , signInWithEmailAndPassword } from "firebase/auth";
 import axios from "axios";
@@ -8,6 +8,12 @@ import { Link } from "react-router-dom";
 
 
 export default function Login() {
+
+  useEffect( () => {
+		if( localStorage.getItem("email")!=null)
+			nav("/");
+
+	})
   const nav = useNavigate()
   
 
@@ -22,6 +28,7 @@ export default function Login() {
 			signInWithEmailAndPassword(auth, email , password)
 			.then(res => {
 				nav("/");
+        localStorage.setItem("un",email);
 			
 			})
 
@@ -49,9 +56,10 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
       
-      <button className="loginRegisterButton">
-        <Link  className = "link" to ="/register">REGISTER</Link> </button>
+      <button value = {handleSubmit} className="loginRegisterButton"  >LOGIN</button>
+      
     </form>
+    <h1>{msg}</h1>
     
   </div>
 );

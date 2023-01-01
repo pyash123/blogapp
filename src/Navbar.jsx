@@ -16,10 +16,7 @@ export default function Navbar() {
             <Link className="link" to="/">
               HOME
             </Link></li>
-            <li className="topListItem">
-            <Link className="link" to="/contact">
-              Contact
-            </Link></li>
+            
             <li className="topListItem">
             <Link className="link" to="/about">
               About
