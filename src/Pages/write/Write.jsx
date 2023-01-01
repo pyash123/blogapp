@@ -43,9 +43,10 @@ export default function Write() {
             />
           </div>
           <div className="writeFormGroup">
-              className="writeInput writeText"
+          <input
+                  className="writeInput writeText"
               placeholder="Tell your story..."
-              type="text"  value = {inputList} onChange = {itemEvent} 
+              type="text"   onChange = {itemEvent} 
               autoFocus={true}
             />
           </div>
