@@ -1,16 +1,21 @@
 
 import './App.css';
 import Navbar from './Navbar';
-import Home from "./Pages/home/Home";
-import Settings from "./Pages/settings/Settings";
-import Login from "./Pages/login/Login";
-import Register from './Pages/register/Register';
+import Home from "./pages/home/Home";
+import Settings from "./pages/settings/Settings";
+import Login from "./pages/login/Login";
+import Register from './pages/register/Register';
 import { BrowserRouter as Router, Routes, Route , Link } from "react-router-dom";
-import Write from "./Pages/write/Write";
+import Write from "./pages/write/Write";
+
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import About from './Pages/about/About';
+import View from './pages/write/View';
+import Single from './pages/single/Single';
+import Enquiry from './pages/enquiry/Enquiry';
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,6 +23,7 @@ import About from './Pages/about/About';
 const firebaseConfig = {
   apiKey: "AIzaSyCwQ3JmwhqJV5RQiP9G3dPl79TbTMuDDj4",
   authDomain: "yash8aug.firebaseapp.com",
+  databaseURL: "https://yash8aug-default-rtdb.firebaseio.com",
   projectId: "yash8aug",
   storageBucket: "yash8aug.appspot.com",
   messagingSenderId: "953978650784",
@@ -26,6 +32,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 
 
 
@@ -41,7 +48,11 @@ function App() {
     <Route path = "/login" element = {<Login/>}/>
     <Route path = "/write" element = {<Write/>}/>
     <Route path="/settings"  element = {<Settings/>}/>
-    <Route path="/about"  element = {<About/>}/>
+    <Route path="/view"  element = {<View/>}/>
+    <Route path="/single"  element = {<Single/>}/>
+    <Route path="/enquiry"  element = {<Enquiry/>}/>
+   
+    
       
           
         
@@ -55,3 +66,4 @@ function App() {
 }
 
 export default App;
+

@@ -43,4 +43,12 @@
     font-weight: 300;
     cursor: pointer;
   }
+  .btn{
+    color:blue;
+    background: rgb(176, 176, 176);
+    margin-right: 20px;
+    font-size: 25px;
+    cursor:pointer
+    
+  }
    

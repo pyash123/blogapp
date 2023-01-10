@@ -1,9 +1,39 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+import { useEffect , useState } from "react";
+import { getAuth , signOut} from "firebase/auth";
+
+
 
 
 export default function Navbar() {
   const user = false;
+  const nav = useNavigate();
+  const un = localStorage.getItem("un");
+	const [username ,setUsername] = useState("");
+  const u = localStorage.getItem("un");
+  useEffect(() => {
+		let u = localStorage.getItem("un");
+		if(  u != null)
+		{
+			setUsername(u);
+     
+      
+		}
+  });
+		
+	
+  const lo = (event) =>{
+		event.preventDefault();
+		const auth = getAuth();
+		localStorage.clear();
+		signOut(auth)
+		.then(res => {
+			nav("/login")
+		})
+		.catch(err =>console.log(err.messgae))
+	}
   return(
     <div className ="top ">
         <div className="topLeft">
@@ -17,17 +47,23 @@ export default function Navbar() {
               HOME
             </Link></li>
             
+           
+            
             <li className="topListItem">
-            <Link className="link" to="/about">
-              About
+            <Link className="link" to="/settings">
+              Settings
             </Link></li>
             <li className="topListItem">
             <Link className="link" to="/write">
               Write
             </Link></li>
             <li className="topListItem">
-            <Link className="link" to="/settings">
-              Settings
+            <Link className="link" to="/view">
+              View
+            </Link></li>
+            <li className="topListItem">
+            <Link className="link" to="/enquiry">
+              Enquiry
             </Link></li>
             
 
@@ -45,19 +81,20 @@ export default function Navbar() {
           ) : (
           <ul className="topList">
             <li className="topListItem">
-              <Link className="link" to="/login">
-                LOGIN
-              </Link>
+            {(un == null) && (<Link className="link" to = "/login">Login</Link>)}
             </li>
             <li className="topListItem">
-              <Link className="link" to="/register">
-                REGISTER
-              </Link>
+            {(un == null) && (<Link className="link"to = "/register">Register</Link>)}
             </li>
             </ul>
           )}
-              <i className=" topIcon fa-solid fa-magnifying-glass"></i>
+            <form onSubmit={lo}>
+             <input type = "submit"  className = "btn" value = "Logout" />
+              
+            </form>
 
+            <h3> Welcome user :
+              {username}</h3>
         </div>
         
         </div>

@@ -1,10 +1,8 @@
-import "./Single.css";
-import Sidebar from "./sidebar/Sidebar"
+import { Link } from "react-router-dom";
+import "./single.css";
 
 export default function Single() {
   return (
-    <>
-    <Sidebar/>
     <div className="singlePost">
       <div className="singlePostWrapper">
         <img
@@ -23,9 +21,9 @@ export default function Single() {
           <span>
             Author:
             <b className="singlePostAuthor">
-            
+              <Link className="link" to="/posts?username=Safak">
                 Safak
-              
+              </Link>
             </b>
           </span>
           <span>1 day ago</span>
@@ -62,6 +60,5 @@ export default function Single() {
         </p>
       </div>
     </div>
-    </>
   );
 }

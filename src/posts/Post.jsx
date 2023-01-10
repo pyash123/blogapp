@@ -23,8 +23,10 @@ export default function Post({img}) {
         </span>
       </div>
       <span className="postTitle">
+      <Link to="/single" className="link">
         
           Lorem ipsum dolor sit amet
+          </Link>
         
       </span>
       <hr />

@@ -51,7 +51,7 @@
   
   .writeText {
     width: 70vw;
-    height: 100vh;
+    height: 50vh;
     font-family: inherit;
     font-size: 20px;
   }
@@ -69,8 +69,4 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-  }
-  .add{
-    color: black;
-    
   }
