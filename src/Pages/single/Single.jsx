@@ -22,7 +22,7 @@ export default function Single() {
             Author:
             <b className="singlePostAuthor">
               <Link className="link" to="/posts?username=Safak">
-                Safak
+                Yash Pandey
               </Link>
             </b>
           </span>
